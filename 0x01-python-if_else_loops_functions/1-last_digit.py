@@ -5,6 +5,8 @@ n = str(number)
 j = len(n)
 t = n[j-1]
 x = int(t)
+if number < 0:
+    x = -x
 print("Last digit of", end=" ")
 if x > 5:
     print(f"{number} is {x} and is greater than 5")
