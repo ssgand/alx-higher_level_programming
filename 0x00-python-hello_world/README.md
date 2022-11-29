@@ -1,0 +1,1 @@
+Python course first directory
