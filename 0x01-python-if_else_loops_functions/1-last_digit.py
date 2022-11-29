@@ -5,9 +5,10 @@ n = str(number)
 j = len(n)
 t = n[j-1]
 x = int(t)
+print("Last digit of", end=" ")
 if x > 5:
-    print(f"Last digit of {number} is {x} and is greater than 5")
+    print(f"{number} is {x} and is greater than 5")
 elif x == 0:
-    print(f"Last digit of {number} is {x} and is 0")
+    print(f"{number} is {x} and is 0")
 elif x < 6 and t != 0:
-    print(f"Last digit of {number} is {x} and is less than 6 and not 0")
+    print(f"{number} is {x} and is less than 6 and not 0")
