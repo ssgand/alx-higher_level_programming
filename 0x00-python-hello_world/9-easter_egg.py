@@ -1,2 +1,2 @@
-#!/bin/bash
-cat The_zen_of_python
+#!/usr/bin/python3
+import this
