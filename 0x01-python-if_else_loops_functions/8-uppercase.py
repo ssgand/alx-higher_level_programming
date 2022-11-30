@@ -6,4 +6,3 @@ def uppercase(c):
             p = chr(ord(i) - 32)
         print('{p}'.format(p=p), end='')
     print()
-
