@@ -4,12 +4,17 @@ def roman_to_int(roman_string):
                   'M': 1000}
     sum = 0
     y = []
-    for i, j in roman_dict.items():
-        for k in roman_string:
-            if i == k:
-                y.append(i)
-    for i in range(len(y)):
-        sum += roman_dict[y[i]]
-        # if roman_dict[y[i] > roman_dict[y[i - 1]]:
-        # sum += roman_dict[y[i]] - roman_dict[y[i - 1]]
+    for k in roman_string:
+        y.append(k)
+    if len(y) == 1:
+        sum += roman_dict[y[0]]
+    else:
+        for i in range(len(y)):
+            if i == 0:
+                sum += roman_dict[y[i]]
+                continue
+            elif roman_dict[y[i]] <= roman_dict[y[i - 1]]:
+                sum += roman_dict[y[i]]
+            else:
+                sum += roman_dict[y[i]] - (roman_dict[y[i - 1]] * 2)
     return sum
