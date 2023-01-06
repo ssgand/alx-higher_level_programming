@@ -2,6 +2,7 @@
 
 '''Defining a new class.'''
 
+
 class Square:
     '''Creating a class called Square.'''
     pass
