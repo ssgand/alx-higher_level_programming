@@ -3,7 +3,6 @@
 '''Define a class.'''
 
 
-
 class BaseGeometry:
     '''Class created.'''
     pass
