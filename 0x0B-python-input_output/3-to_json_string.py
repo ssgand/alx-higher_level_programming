@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-import json
-# '''Importing the json module.'''
 
 '''Defining a new function.'''
+
+
+import json
+# '''Importing the json module.'''
 
 
 def to_json_string(my_obj):
