@@ -9,5 +9,8 @@ import json
 
 def load_from_json_file(filename):
     '''Function to represent python objects form json file.'''
-    with open(filename, 'r+', encoding='utf-8') as fhand:
-        json.load(fhand)
+    # f = ''
+    with open(filename, 'r', encoding='utf-8') as fhand:
+        '''for line in fhand:
+            f += line'''
+        return json.load(fhand)
