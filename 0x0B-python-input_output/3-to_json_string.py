@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import json
-'''Importing the json module.'''
+# '''Importing the json module.'''
 
 '''Defining a new function.'''
 
