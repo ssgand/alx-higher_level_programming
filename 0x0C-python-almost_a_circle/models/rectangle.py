@@ -10,10 +10,58 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+
+    def area(self):
+        return self.__width * self.__height
+
+    def display(self):
+        z = 0
+        while z < self.__y:
+            print('')
+            z += 1
+        i = 0
+        while i < self.__height:
+            j = 0
+            print(' ' * self.__x, end='')
+            while j < self.__width:
+                print('#', end='')
+                j += 1
+            print()
+            i += 1
+
+    def update(self, *args, **kwargs):
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                self.__setattr__(key, value)
+        try:
+            self.id = args[0]
+            self.__width = args[1]
+            self.__height = args[2]
+            self.__x = args[3]
+            self.__y = args[4]
+        except IndexError:
+            pass
+
+    def to_dictionary(self):
+        dic = {}
+        r = self.__height
+        e = self.__width
+        d = self.__x
+        z = self.__y
+        dic = {'id': self.id, 'width': e, 'height': r, 'x': d, 'y': z}
+        return dic
+
+    def __str__(self):
+        t = __class__.__name__
+        r = self.__height
+        e = self.__width
+        d = self.__x
+        z = self.__y
+        return '[{}] ({}) {}/{} - {}/{}'.format(t, self.id, d, z, e, r)
 
     @property
     def width(self):
@@ -51,14 +99,13 @@ class Rectangle(Base):
         self.setter_validation('y', value)
         self.__y = value
 
-
     @staticmethod
     def setter_validation(attribute, value):
-        if not isinstance(value, int):
+        if not type(value) == int:
             raise TypeError('{} must be an integer'.format(attribute))
-        elif attribute == 'width' or attribute == 'height':
-            if value <= 0:
-                raise ValueError('{} must be > 0'.format(attribute))
-        else:
+        elif attribute == 'x' or attribute == 'y':
             if value < 0:
                 raise ValueError('{} must be >= 0'.format(attribute))
+        else:
+            if value <= 0:
+                raise ValueError('{} must be > 0'.format(attribute))
